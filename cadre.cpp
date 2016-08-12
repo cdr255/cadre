@@ -6,6 +6,45 @@ Cadre::Character::Character(std::string n, int f, int s, int w, int st, int fo, 
   std::cout << "Loaded Character " << statname << ".\n";
 }
 
+Cadre::Character::Character(std::string filename){
+  std::string entry,name;
+  std::vector<int> stats;
+  std::ifstream file(filename);
+  if(file.is_open())
+    {
+      int entry_counter = -1;
+      while ( std::getline(file,entry,',') )
+	{
+	  if (entry_counter == -1)
+	    {
+	      name = entry;
+	    }
+	  else
+	    {
+	      stats.push_back(stoi(entry));
+	    }
+	  
+	  entry_counter++;
+	}
+      file.close();
+      statname = name;
+      statforce = stats[0];
+      statskill = stats[1];
+      statwit = stats[2];
+      statstrength = stats[3];
+      statfortitude = stats[4];
+      statreaction = stats[5];
+      statgrace = stats[6];
+      stateducation = stats[7];
+      statintuition = stats[8];
+      std::cout << "Loaded Character " << statname << ".\n";
+    }
+  else
+    {
+      std::cout << "Unable to open file '" << filename << "'.";
+    }
+}
+
 int Cadre::Character::force()
 {
   return statforce;
@@ -60,20 +99,4 @@ int Cadre::Character::writeout()
 
 int Cadre::readin(std::string filename)
 {
-  std::string entry;
-  std::ifstream file(filename);
-  if(file.is_open())
-    {
-      while ( std::getline(file,entry,',') )
-	{
-	  std::cout << entry << "\n";
-	}
-      file.close();
-      return 0;
-    }
-  else
-    {
-      std::cout << "Unable to open file '" << filename << "'.";
-      return 1;
-    }
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 namespace Cadre
 {
@@ -24,7 +25,8 @@ namespace Cadre
     int education();
     int intuition();
     std::string name();
-    // Constructor
+    // Constructors
+    Character(std::string);
     Character(std::string,int,int,int,int,int,int,int,int,int);
     // File Functions
     int writeout();
