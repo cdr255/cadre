@@ -57,3 +57,23 @@ int Cadre::Character::writeout()
   file << statname << "," << statforce << "," << statskill << "," << statwit << "," << statstrength << "," << statfortitude << "," << statreaction << "," << statgrace << "," << stateducation << "," << statintuition << "\n";
   return 0;
 }
+
+int Cadre::readin(std::string filename)
+{
+  std::string entry;
+  std::ifstream file(filename);
+  if(file.is_open())
+    {
+      while ( std::getline(file,entry,',') )
+	{
+	  std::cout << entry << "\n";
+	}
+      file.close();
+      return 0;
+    }
+  else
+    {
+      std::cout << "Unable to open file '" << filename << "'.";
+      return 1;
+    }
+}

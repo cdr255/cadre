@@ -29,6 +29,9 @@ namespace Cadre
     // File Functions
     int writeout();
   };
+
+  int readin(std::string);
+
 }
 
 #endif
