@@ -30,6 +30,7 @@ namespace Cadre
     Character(std::string,int,int,int,int,int,int,int,int,int);
     // File Functions
     int writeout();
+    int writeout(std::string);
   };
 
   int readin(std::string);

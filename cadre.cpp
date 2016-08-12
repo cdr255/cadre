@@ -97,6 +97,14 @@ int Cadre::Character::writeout()
   return 0;
 }
 
+int Cadre::Character::writeout(std::string filename)
+{
+  std::ofstream file;
+  file.open(filename);
+  file << statname << "," << statforce << "," << statskill << "," << statwit << "," << statstrength << "," << statfortitude << "," << statreaction << "," << statgrace << "," << stateducation << "," << statintuition << "\n";
+  return 0;  
+}
+
 int Cadre::readin(std::string filename)
 {
 }

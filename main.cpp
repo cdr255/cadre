@@ -34,6 +34,13 @@ int main(int argc,char* argv[])
   if (input == true)
     {
       Cadre::Character player(inputname);
+      if (output == true)
+	{
+	  if (player.writeout(outputname) == 0)
+	  std::cout << "File Written Successfully!\n";
+	else
+	  std::cout << "Error. File not Written.\n";
+	}
     }
   
   return 0;
@@ -41,7 +48,7 @@ int main(int argc,char* argv[])
 
 
 void testbasic()
-{
+{ 
   	Cadre::Character player("Leonora",7,5,9,1,2,3,4,5,6);
 	if (player.writeout() == 0)
 	  std::cout << "File Written Successfully!\n";
