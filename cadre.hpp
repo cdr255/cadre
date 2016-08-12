@@ -1,6 +1,7 @@
 #ifndef _CADRE_HPP_
 #define _CADRE_HPP_
 #include <iostream>
+#include <fstream>
 #include <string>
 
 namespace Cadre
@@ -12,6 +13,7 @@ namespace Cadre
     int statforce, statskill, statwit; // Primary Stats
     int statstrength, statfortitude, statreaction, statgrace, stateducation, statintuition; // Secondary Stats
   public:
+    // Getter Fuctions
     int force();
     int skill();
     int wit();
@@ -22,9 +24,11 @@ namespace Cadre
     int education();
     int intuition();
     std::string name();
+    // Constructor
     Character(std::string,int,int,int,int,int,int,int,int,int);
+    // File Functions
+    int writeout();
   };
 }
-
 
 #endif

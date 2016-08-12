@@ -48,3 +48,12 @@ int Cadre::Character::intuition()
 {
   return statintuition;
 }
+
+int Cadre::Character::writeout()
+{
+  std::string outfile = statname + ".txt";
+  std::ofstream file;
+  file.open(outfile);
+  file << statname << "," << statforce << "," << statskill << "," << statwit << "," << statstrength << "," << statfortitude << "," << statreaction << "," << statgrace << "," << stateducation << "," << statintuition << "\n";
+  return 0;
+}
