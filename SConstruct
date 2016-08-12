@@ -4,4 +4,4 @@ env=Environment(CPPPATH=[],
 		CXXFLAGS="-Wall -std=gnu++11"
 )	
 
-env.Program('cadre', ['main.cpp'])
+env.Program('cadre', ['main.cpp', 'cadre.cpp'])
