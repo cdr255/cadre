@@ -50,6 +50,12 @@ namespace Cadre
     bool forcecheck(bool);
     bool skillcheck(bool);
     bool witcheck(bool);
+    bool strengthcheck(bool);
+    bool fortitudecheck(bool);
+    bool reactioncheck(bool);
+    bool gracecheck(bool);
+    bool educationcheck(bool);
+    bool intuitioncheck(bool);
   };
 
 }

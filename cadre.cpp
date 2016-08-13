@@ -138,7 +138,7 @@ std::string Cadre::Quest::name()
 
 bool Cadre::Quest::forcecheck(bool dice)
 {
-  std::cout << character->name() << " needs to be strong!\n";
+  std::cout << character->name() << " needs to be forceful!\n";
   std::cout << "  ( >" << reqamount << " needed.)\n...\n";
   if (reqamount <= character->force())
     {
@@ -151,3 +151,132 @@ bool Cadre::Quest::forcecheck(bool dice)
       return false;
     }
 }
+
+bool Cadre::Quest::skillcheck(bool dice)
+{
+  std::cout << character->name() << " needs to be skilled!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->skill())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
+}
+
+bool Cadre::Quest::witcheck(bool dice)
+{
+  std::cout << character->name() << " needs to be witty!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->wit())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
+}
+
+bool Cadre::Quest::strengthcheck(bool dice)
+{
+  std::cout << character->name() << " needs to be strong!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->strength())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
+}
+
+bool Cadre::Quest::fortitudecheck(bool dice)
+{
+  std::cout << character->name() << " needs to be tough!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->fortitude())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
+}
+
+bool Cadre::Quest::reactioncheck(bool dice)
+{
+  std::cout << character->name() << " needs to be quick!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->reaction())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
+}
+
+bool Cadre::Quest::gracecheck(bool dice)
+{
+  std::cout << character->name() << " needs to be graceful!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->grace())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
+}
+
+bool Cadre::Quest::educationcheck(bool dice)
+{
+  std::cout << character->name() << " needs to be well-read!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->education())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
+}
+
+bool Cadre::Quest::intuitioncheck(bool dice)
+{
+  std::cout << character->name() << " needs to be intuitive!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->intuition())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
+}
+
