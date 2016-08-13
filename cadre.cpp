@@ -1,5 +1,11 @@
 #include "cadre.hpp"
 
+/********************
+
+CHARACTER DEFINITIONS
+
+********************/
+
 Cadre::Character::Character(std::string n, int f, int s, int w, int st, int fo, int re, int gr, int ed, int in):
   statname(n),statforce(f),statskill(s),statwit(w),statstrength(st),statfortitude(fo),statreaction(re),statgrace(gr),stateducation(ed),statintuition(in)
 {
@@ -43,6 +49,11 @@ Cadre::Character::Character(std::string filename){
     {
       std::cout << "Unable to open file '" << filename << "'.";
     }
+}
+
+std::string Cadre::Character::name()
+{
+  return statname;
 }
 
 int Cadre::Character::force()
@@ -105,6 +116,38 @@ int Cadre::Character::writeout(std::string filename)
   return 0;  
 }
 
-int Cadre::readin(std::string filename)
+/****************
+
+QUEST DEFINITIONS
+
+****************/
+
+Cadre::Quest::Quest(std::string n, std::string r, int a, Cadre::Character* c):
+  qname(n),
+  reqname(r),
+  reqamount(a),
+  character(c)
 {
+  std::cout << "| " << character->name() << " embarks on the basic quest " << name() << "! |\n\n";
+}
+
+std::string Cadre::Quest::name()
+{
+  return qname;
+}
+
+bool Cadre::Quest::forcecheck(bool dice)
+{
+  std::cout << character->name() << " needs to be strong!\n";
+  std::cout << "  ( >" << reqamount << " needed.)\n...\n";
+  if (reqamount <= character->force())
+    {
+      std::cout << "SUCCESS!\n";
+      return true;
+    }
+  else
+    {
+      std::cout << "FAILURE!\n";
+      return false;
+    }
 }

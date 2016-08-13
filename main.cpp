@@ -4,12 +4,15 @@
 void testbasic();
 void printhelp();
 
+
+
+
 int main(int argc,char* argv[])
 {
   int optnum;
   std::string outputname, inputname;
-  bool output, input, testing = false;
-  while ((optnum = getopt(argc, argv, "ho:r:t")) != -1)
+  bool output, input, quest = false;
+  while ((optnum = getopt(argc, argv, "ho:qr:t")) != -1)
     {
       switch (optnum) {
       case 'h':
@@ -18,6 +21,9 @@ int main(int argc,char* argv[])
       case 'o':
 	outputname = optarg;
 	output=true;
+	break;
+      case 'q':
+	quest = true;
 	break;
       case 'r':
 	inputname = optarg;
@@ -42,6 +48,10 @@ int main(int argc,char* argv[])
 	  std::cout << "Error. File not Written.\n";
 	}
     }
+  if (quest == true)
+    {
+      
+    }
   
   return 0;
 }
@@ -54,7 +64,8 @@ void testbasic()
 	  std::cout << "File Written Successfully!\n";
 	else
 	  std::cout << "Error. Files not Written.\n";
-	Cadre::readin("Leonora.txt");
+	Cadre::Quest quest("Testing Trial", "force", 7, &player);
+	quest.forcecheck(false);
 }
 
 void printhelp()

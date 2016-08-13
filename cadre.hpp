@@ -33,7 +33,24 @@ namespace Cadre
     int writeout(std::string);
   };
 
-  int readin(std::string);
+  class Quest
+  {
+  private:
+    std::string qname,reqname;
+    int reqamount;
+    Cadre::Character* character;
+  public:
+    // Getter Functions
+    std::string name();
+    
+    // Constructors
+    Quest(std::string, std::string, int, Cadre::Character*);
+    Quest(std::string);
+    // Operators
+    bool forcecheck(bool);
+    bool skillcheck(bool);
+    bool witcheck(bool);
+  };
 
 }
 
