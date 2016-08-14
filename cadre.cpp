@@ -128,6 +128,8 @@ Cadre::Quest::Quest(std::string n, std::string r, int a, Cadre::Character* c):
   reqamount(a),
   character(c)
 {
+  generator.seed(rd());
+  std::cout << "Lucky Number: " << roll(10) << "!\n\n";
   std::cout << "| " << character->name() << " embarks on the basic quest " << name() << "! |\n\n";
 }
 
@@ -280,3 +282,8 @@ bool Cadre::Quest::intuitioncheck(bool dice)
     }
 }
 
+int Cadre::Quest::roll(int x)
+{
+  std::uniform_int_distribution<int> distribution(1,x);
+  return distribution(generator);
+}

@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <random>
 
 namespace Cadre
 {
@@ -39,10 +40,12 @@ namespace Cadre
     std::string qname,reqname;
     int reqamount;
     Cadre::Character* character;
+    std::random_device rd;
+    std::default_random_engine generator;
+    int roll(int);
   public:
-    // Getter Functions
+    // Getters
     std::string name();
-    
     // Constructors
     Quest(std::string, std::string, int, Cadre::Character*);
     Quest(std::string);
